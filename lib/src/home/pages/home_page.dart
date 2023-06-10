@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lettery/src/config.dart';
+import 'package:lettery/src/config.dart' show Config;
+import 'package:lettery/src/home/home.dart' show Grid;
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home';
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
             flex: 7,
             child: Container(
               color: Colors.yellow,
+              child: const Grid(),
             ),
           ),
           Expanded(
