@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lettery/src/config.dart' show Config;
-import 'package:lettery/src/home/home.dart' show Grid;
+import 'package:lettery/src/home/home.dart' show Grid, KeyboardRow;
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home';
@@ -32,6 +32,22 @@ class _HomePageState extends State<HomePage> {
             flex: 4,
             child: Container(
               color: Colors.green,
+              child: const Column(
+                children: [
+                  KeyboardRow(
+                    min: 1,
+                    max: 10,
+                  ),
+                  KeyboardRow(
+                    min: 11,
+                    max: 19,
+                  ),
+                  KeyboardRow(
+                    min: 20,
+                    max: 29,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
