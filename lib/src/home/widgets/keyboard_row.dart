@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lettery/src/common/common.dart' show keysMap;
+import 'package:lettery/src/home/provider.dart' show homeControllerProvider;
 
-class KeyboardRow extends StatelessWidget {
+class KeyboardRow extends ConsumerWidget {
   const KeyboardRow({
     super.key,
     required this.min,
@@ -11,7 +13,8 @@ class KeyboardRow extends StatelessWidget {
   final int min, max;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final homeProviderController = ref.read(homeControllerProvider.notifier);
     final size = MediaQuery.of(context).size;
     int index = 0;
     return Row(
@@ -32,7 +35,11 @@ class KeyboardRow extends StatelessWidget {
                   height: size.height / 11,
                   child: Material(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        homeProviderController.setKeyTapped(
+                          value: e.key,
+                        );
+                      },
                       child: Center(
                         child: Text(e.key),
                       ),
