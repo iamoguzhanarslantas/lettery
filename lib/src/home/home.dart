@@ -4,6 +4,7 @@ export 'controllers/home_controller_state_notifier.dart';
 export 'data/keys_map.dart';
 export 'models/tile_model.dart';
 export 'pages/home_page.dart';
+export 'provider.dart';
 export 'widgets/grid.dart';
 export 'widgets/keyboard_row.dart';
 export 'widgets/tile.dart';

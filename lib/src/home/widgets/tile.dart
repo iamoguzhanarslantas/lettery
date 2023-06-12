@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lettery/src/home/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart'
+    show ConsumerWidget, WidgetRef;
+import 'package:lettery/src/home/home.dart' show homeControllerProvider;
 
 class Tile extends ConsumerWidget {
   const Tile({
