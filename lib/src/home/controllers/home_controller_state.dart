@@ -3,9 +3,9 @@ import 'package:lettery/src/home/home.dart' show TileModel;
 
 part 'home_controller_state.freezed.dart';
 
-@unfreezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class HomeControllerState with _$HomeControllerState {
-  factory HomeControllerState({
+  const factory HomeControllerState({
     required int currentTile,
     required int currentRow,
     required List<TileModel> tilesEntered,

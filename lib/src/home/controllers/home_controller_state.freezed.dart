@@ -17,11 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeControllerState {
   int get currentTile => throw _privateConstructorUsedError;
-  set currentTile(int value) => throw _privateConstructorUsedError;
   int get currentRow => throw _privateConstructorUsedError;
-  set currentRow(int value) => throw _privateConstructorUsedError;
   List<TileModel> get tilesEntered => throw _privateConstructorUsedError;
-  set tilesEntered(List<TileModel> value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeControllerStateCopyWith<HomeControllerState> get copyWith =>
@@ -117,22 +114,39 @@ class __$$_HomeControllerStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomeControllerState implements _HomeControllerState {
-  _$_HomeControllerState(
+  const _$_HomeControllerState(
       {required this.currentTile,
       required this.currentRow,
       required this.tilesEntered});
 
   @override
-  int currentTile;
+  final int currentTile;
   @override
-  int currentRow;
+  final int currentRow;
   @override
-  List<TileModel> tilesEntered;
+  final List<TileModel> tilesEntered;
 
   @override
   String toString() {
     return 'HomeControllerState(currentTile: $currentTile, currentRow: $currentRow, tilesEntered: $tilesEntered)';
   }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_HomeControllerState &&
+            (identical(other.currentTile, currentTile) ||
+                other.currentTile == currentTile) &&
+            (identical(other.currentRow, currentRow) ||
+                other.currentRow == currentRow) &&
+            const DeepCollectionEquality()
+                .equals(other.tilesEntered, tilesEntered));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, currentTile, currentRow,
+      const DeepCollectionEquality().hash(tilesEntered));
 
   @JsonKey(ignore: true)
   @override
@@ -143,20 +157,17 @@ class _$_HomeControllerState implements _HomeControllerState {
 }
 
 abstract class _HomeControllerState implements HomeControllerState {
-  factory _HomeControllerState(
-      {required int currentTile,
-      required int currentRow,
-      required List<TileModel> tilesEntered}) = _$_HomeControllerState;
+  const factory _HomeControllerState(
+      {required final int currentTile,
+      required final int currentRow,
+      required final List<TileModel> tilesEntered}) = _$_HomeControllerState;
 
   @override
   int get currentTile;
-  set currentTile(int value);
   @override
   int get currentRow;
-  set currentRow(int value);
   @override
   List<TileModel> get tilesEntered;
-  set tilesEntered(List<TileModel> value);
   @override
   @JsonKey(ignore: true)
   _$$_HomeControllerStateCopyWith<_$_HomeControllerState> get copyWith =>
