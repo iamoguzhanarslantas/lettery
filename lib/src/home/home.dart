@@ -1,4 +1,5 @@
 export 'constants/answer_stage.dart';
+export 'constants/words.dart';
 export 'controllers/home_controller_state.dart';
 export 'controllers/home_controller_state_notifier.dart';
 export 'data/keys_map.dart';
