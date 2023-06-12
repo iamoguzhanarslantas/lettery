@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lettery/src/home/home.dart' show Tile;
 
 class Grid extends StatelessWidget {
   const Grid({
@@ -24,11 +25,7 @@ class Grid extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(),
           ),
-          child: Center(
-            child: Text(
-              index.toString(),
-            ),
-          ),
+          child: Tile(index: index),
         );
       },
     );
