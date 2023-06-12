@@ -4,7 +4,7 @@ import 'package:lettery/src/home/home.dart'
 
 class HomeControllerStateNotifier extends StateNotifier<HomeControllerState> {
   HomeControllerStateNotifier()
-      : super(const HomeControllerState(
+      : super(HomeControllerState(
           currentTile: 0,
           currentRow: 0,
           tilesEntered: [],

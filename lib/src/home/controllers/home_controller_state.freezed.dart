@@ -17,8 +17,11 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeControllerState {
   int get currentTile => throw _privateConstructorUsedError;
+  set currentTile(int value) => throw _privateConstructorUsedError;
   int get currentRow => throw _privateConstructorUsedError;
+  set currentRow(int value) => throw _privateConstructorUsedError;
   List<TileModel> get tilesEntered => throw _privateConstructorUsedError;
+  set tilesEntered(List<TileModel> value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeControllerStateCopyWith<HomeControllerState> get copyWith =>
@@ -104,7 +107,7 @@ class __$$_HomeControllerStateCopyWithImpl<$Res>
           : currentRow // ignore: cast_nullable_to_non_nullable
               as int,
       tilesEntered: null == tilesEntered
-          ? _value._tilesEntered
+          ? _value.tilesEntered
           : tilesEntered // ignore: cast_nullable_to_non_nullable
               as List<TileModel>,
     ));
@@ -114,45 +117,22 @@ class __$$_HomeControllerStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomeControllerState implements _HomeControllerState {
-  const _$_HomeControllerState(
+  _$_HomeControllerState(
       {required this.currentTile,
       required this.currentRow,
-      required final List<TileModel> tilesEntered})
-      : _tilesEntered = tilesEntered;
+      required this.tilesEntered});
 
   @override
-  final int currentTile;
+  int currentTile;
   @override
-  final int currentRow;
-  final List<TileModel> _tilesEntered;
+  int currentRow;
   @override
-  List<TileModel> get tilesEntered {
-    if (_tilesEntered is EqualUnmodifiableListView) return _tilesEntered;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tilesEntered);
-  }
+  List<TileModel> tilesEntered;
 
   @override
   String toString() {
     return 'HomeControllerState(currentTile: $currentTile, currentRow: $currentRow, tilesEntered: $tilesEntered)';
   }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_HomeControllerState &&
-            (identical(other.currentTile, currentTile) ||
-                other.currentTile == currentTile) &&
-            (identical(other.currentRow, currentRow) ||
-                other.currentRow == currentRow) &&
-            const DeepCollectionEquality()
-                .equals(other._tilesEntered, _tilesEntered));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, currentTile, currentRow,
-      const DeepCollectionEquality().hash(_tilesEntered));
 
   @JsonKey(ignore: true)
   @override
@@ -163,17 +143,20 @@ class _$_HomeControllerState implements _HomeControllerState {
 }
 
 abstract class _HomeControllerState implements HomeControllerState {
-  const factory _HomeControllerState(
-      {required final int currentTile,
-      required final int currentRow,
-      required final List<TileModel> tilesEntered}) = _$_HomeControllerState;
+  factory _HomeControllerState(
+      {required int currentTile,
+      required int currentRow,
+      required List<TileModel> tilesEntered}) = _$_HomeControllerState;
 
   @override
   int get currentTile;
+  set currentTile(int value);
   @override
   int get currentRow;
+  set currentRow(int value);
   @override
   List<TileModel> get tilesEntered;
+  set tilesEntered(List<TileModel> value);
   @override
   @JsonKey(ignore: true)
   _$$_HomeControllerStateCopyWith<_$_HomeControllerState> get copyWith =>

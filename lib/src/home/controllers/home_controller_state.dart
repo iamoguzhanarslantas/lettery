@@ -5,7 +5,7 @@ part 'home_controller_state.freezed.dart';
 
 @unfreezed
 class HomeControllerState with _$HomeControllerState {
-  const factory HomeControllerState({
+  factory HomeControllerState({
     required int currentTile,
     required int currentRow,
     required List<TileModel> tilesEntered,
