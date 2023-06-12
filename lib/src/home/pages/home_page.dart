@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lettery/src/config.dart' show Config;
+import 'package:lettery/src/config/config.dart' show Config;
 import 'package:lettery/src/home/home.dart' show Grid, KeyboardRow;
 
 class HomePage extends StatefulWidget {

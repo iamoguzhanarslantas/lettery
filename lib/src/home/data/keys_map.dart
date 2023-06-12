@@ -1,4 +1,4 @@
-import 'package:lettery/src/common/common.dart' show AnswerStage;
+import 'package:lettery/src/home/home.dart' show AnswerStage;
 
 Map<String, AnswerStage> keysMap = {
   'Q': AnswerStage.notAnswered,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lettery/src/common/common.dart' show keysMap;
+import 'package:lettery/src/home/home.dart' show keysMap;
 import 'package:lettery/src/home/provider.dart' show homeControllerProvider;
 
 class KeyboardRow extends ConsumerWidget {
