@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeControllerState {
+  String get correctWord => throw _privateConstructorUsedError;
   int get currentTile => throw _privateConstructorUsedError;
   int get currentRow => throw _privateConstructorUsedError;
   List<TileModel> get tilesEntered => throw _privateConstructorUsedError;
@@ -31,7 +32,11 @@ abstract class $HomeControllerStateCopyWith<$Res> {
           HomeControllerState value, $Res Function(HomeControllerState) then) =
       _$HomeControllerStateCopyWithImpl<$Res, HomeControllerState>;
   @useResult
-  $Res call({int currentTile, int currentRow, List<TileModel> tilesEntered});
+  $Res call(
+      {String correctWord,
+      int currentTile,
+      int currentRow,
+      List<TileModel> tilesEntered});
 }
 
 /// @nodoc
@@ -47,11 +52,16 @@ class _$HomeControllerStateCopyWithImpl<$Res, $Val extends HomeControllerState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? correctWord = null,
     Object? currentTile = null,
     Object? currentRow = null,
     Object? tilesEntered = null,
   }) {
     return _then(_value.copyWith(
+      correctWord: null == correctWord
+          ? _value.correctWord
+          : correctWord // ignore: cast_nullable_to_non_nullable
+              as String,
       currentTile: null == currentTile
           ? _value.currentTile
           : currentTile // ignore: cast_nullable_to_non_nullable
@@ -76,7 +86,11 @@ abstract class _$$_HomeControllerStateCopyWith<$Res>
       __$$_HomeControllerStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int currentTile, int currentRow, List<TileModel> tilesEntered});
+  $Res call(
+      {String correctWord,
+      int currentTile,
+      int currentRow,
+      List<TileModel> tilesEntered});
 }
 
 /// @nodoc
@@ -90,11 +104,16 @@ class __$$_HomeControllerStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? correctWord = null,
     Object? currentTile = null,
     Object? currentRow = null,
     Object? tilesEntered = null,
   }) {
     return _then(_$_HomeControllerState(
+      correctWord: null == correctWord
+          ? _value.correctWord
+          : correctWord // ignore: cast_nullable_to_non_nullable
+              as String,
       currentTile: null == currentTile
           ? _value.currentTile
           : currentTile // ignore: cast_nullable_to_non_nullable
@@ -115,10 +134,13 @@ class __$$_HomeControllerStateCopyWithImpl<$Res>
 
 class _$_HomeControllerState implements _HomeControllerState {
   const _$_HomeControllerState(
-      {required this.currentTile,
+      {required this.correctWord,
+      required this.currentTile,
       required this.currentRow,
       required this.tilesEntered});
 
+  @override
+  final String correctWord;
   @override
   final int currentTile;
   @override
@@ -128,7 +150,7 @@ class _$_HomeControllerState implements _HomeControllerState {
 
   @override
   String toString() {
-    return 'HomeControllerState(currentTile: $currentTile, currentRow: $currentRow, tilesEntered: $tilesEntered)';
+    return 'HomeControllerState(correctWord: $correctWord, currentTile: $currentTile, currentRow: $currentRow, tilesEntered: $tilesEntered)';
   }
 
   @override
@@ -136,6 +158,8 @@ class _$_HomeControllerState implements _HomeControllerState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HomeControllerState &&
+            (identical(other.correctWord, correctWord) ||
+                other.correctWord == correctWord) &&
             (identical(other.currentTile, currentTile) ||
                 other.currentTile == currentTile) &&
             (identical(other.currentRow, currentRow) ||
@@ -145,8 +169,8 @@ class _$_HomeControllerState implements _HomeControllerState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentTile, currentRow,
-      const DeepCollectionEquality().hash(tilesEntered));
+  int get hashCode => Object.hash(runtimeType, correctWord, currentTile,
+      currentRow, const DeepCollectionEquality().hash(tilesEntered));
 
   @JsonKey(ignore: true)
   @override
@@ -158,10 +182,13 @@ class _$_HomeControllerState implements _HomeControllerState {
 
 abstract class _HomeControllerState implements HomeControllerState {
   const factory _HomeControllerState(
-      {required final int currentTile,
+      {required final String correctWord,
+      required final int currentTile,
       required final int currentRow,
       required final List<TileModel> tilesEntered}) = _$_HomeControllerState;
 
+  @override
+  String get correctWord;
   @override
   int get currentTile;
   @override
