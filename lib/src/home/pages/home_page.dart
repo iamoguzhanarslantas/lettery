@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' show Random;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'
     show ConsumerState, ConsumerStatefulWidget;
