@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart'
-    show ConsumerWidget, WidgetRef;
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lettery/src/home/home.dart'
     show homeControllerProvider, keysMap;
 

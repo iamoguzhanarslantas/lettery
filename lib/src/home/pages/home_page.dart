@@ -1,7 +1,6 @@
 import 'dart:math' show Random;
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart'
-    show ConsumerState, ConsumerStatefulWidget;
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lettery/src/config/config.dart' show Config;
 import 'package:lettery/src/home/home.dart'
     show Grid, KeyboardRow, homeControllerProvider, words;
