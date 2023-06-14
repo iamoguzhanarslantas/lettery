@@ -21,8 +21,9 @@ class _HomePageState extends ConsumerState<HomePage> {
     final r = Random().nextInt(words.length);
     _word = words[r];
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final homeProviderController = ref.read(homeControllerProvider.notifier);
-      homeProviderController.setCorrectWord(word: _word);
+      final homeProviderNotifierController =
+          ref.read(homeControllerProvider.notifier);
+      homeProviderNotifierController.setCorrectWord(word: _word);
     });
     super.initState();
   }

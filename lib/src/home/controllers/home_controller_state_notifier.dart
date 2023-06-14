@@ -53,7 +53,9 @@ class HomeControllerStateNotifier extends StateNotifier<HomeControllerState> {
       for (int i = state.currentRow * 5; i < (state.currentRow * 5) + 5; i++) {
         state.tilesEntered[i].answerStage = AnswerStage.correct;
         keysMap.update(
-            state.tilesEntered[i].letter, (value) => AnswerStage.correct);
+          state.tilesEntered[i].letter,
+          (value) => AnswerStage.correct,
+        );
       }
     } else {
       for (int i = 0; i < 5; i++) {
@@ -61,7 +63,10 @@ class HomeControllerStateNotifier extends StateNotifier<HomeControllerState> {
           remainingCorrect.remove(guessedWord[i]);
           state.tilesEntered[i + (state.currentRow * 5)].answerStage =
               AnswerStage.correct;
-          keysMap.update(guessedWord[i], (value) => AnswerStage.correct);
+          keysMap.update(
+            guessedWord[i],
+            (value) => AnswerStage.correct,
+          );
         }
       }
       for (int i = 0; i < remainingCorrect.length; i++) {
@@ -77,9 +82,11 @@ class HomeControllerStateNotifier extends StateNotifier<HomeControllerState> {
                 element.key ==
                 state.tilesEntered[j + (state.currentRow * 5)].letter);
 
-            if (resultKey.single.value == AnswerStage.correct) {
+            if (resultKey.single.value != AnswerStage.correct) {
               keysMap.update(
-                  resultKey.single.key, (value) => AnswerStage.contains);
+                resultKey.single.key,
+                (value) => AnswerStage.contains,
+              );
             }
           }
         }
