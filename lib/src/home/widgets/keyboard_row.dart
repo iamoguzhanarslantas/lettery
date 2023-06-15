@@ -16,6 +16,7 @@ class KeyboardRow extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final homeProviderNotifierController =
         ref.read(homeControllerProvider.notifier);
+    final homeProviderController = ref.watch(homeControllerProvider);
     final size = MediaQuery.of(context).size;
     int index = 0;
     return Row(
@@ -25,11 +26,12 @@ class KeyboardRow extends ConsumerWidget {
           index++;
           if (index >= min && index <= max) {
             Color color = Colors.grey;
-            if (e.value == AnswerStage.correct) {
-              color = AppColors.correctGreen;
-            }
-            if (e.value == AnswerStage.contains) {
-              color = AppColors.containsYellow;
+            if (homeProviderController.tilesEntered.isNotEmpty) {
+              if (e.value == AnswerStage.correct) {
+                color = AppColors.correctGreen;
+              } else if (e.value == AnswerStage.contains) {
+                color = AppColors.containsYellow;
+              }
             }
             return Padding(
               padding: EdgeInsets.all(size.width / 100),
