@@ -25,12 +25,14 @@ class KeyboardRow extends ConsumerWidget {
         (e) {
           index++;
           if (index >= min && index <= max) {
-            Color color = Colors.grey;
+            Color color = Theme.of(context).primaryColorLight;
             if (homeProviderController.tilesEntered.isNotEmpty) {
               if (e.value == AnswerStage.correct) {
                 color = AppColors.correctGreen;
               } else if (e.value == AnswerStage.contains) {
                 color = AppColors.containsYellow;
+              } else if (e.value == AnswerStage.incorrect) {
+                color = Theme.of(context).primaryColorDark;
               }
             }
             return Padding(

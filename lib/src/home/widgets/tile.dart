@@ -30,6 +30,8 @@ class _TileState extends ConsumerState<Tile> {
         _backgroundColor = AppColors.correctGreen;
       } else if (_answerStage == AnswerStage.contains) {
         _backgroundColor = AppColors.containsYellow;
+      } else if (_answerStage == AnswerStage.incorrect) {
+        _backgroundColor = Theme.of(context).primaryColorDark;
       }
       return Container(
         color: _backgroundColor,
