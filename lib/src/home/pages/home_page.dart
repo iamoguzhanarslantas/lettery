@@ -36,35 +36,33 @@ class _HomePageState extends ConsumerState<HomePage> {
           Config.appBarTitle,
         ),
       ),
-      body: Column(
+      body: const Column(
         children: [
+          Divider(
+            thickness: 3,
+            height: 1,
+          ),
           Expanded(
             flex: 7,
-            child: Container(
-              color: Colors.yellow,
-              child: const Grid(),
-            ),
+            child: Grid(),
           ),
           Expanded(
             flex: 4,
-            child: Container(
-              color: Colors.green,
-              child: const Column(
-                children: [
-                  KeyboardRow(
-                    min: 1,
-                    max: 10,
-                  ),
-                  KeyboardRow(
-                    min: 11,
-                    max: 19,
-                  ),
-                  KeyboardRow(
-                    min: 20,
-                    max: 29,
-                  ),
-                ],
-              ),
+            child: Column(
+              children: [
+                KeyboardRow(
+                  min: 1,
+                  max: 10,
+                ),
+                KeyboardRow(
+                  min: 11,
+                  max: 19,
+                ),
+                KeyboardRow(
+                  min: 20,
+                  max: 29,
+                ),
+              ],
             ),
           ),
         ],

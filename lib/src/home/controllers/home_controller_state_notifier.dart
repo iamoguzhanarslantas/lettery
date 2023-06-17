@@ -92,6 +92,20 @@ class HomeControllerStateNotifier extends StateNotifier<HomeControllerState> {
         }
       }
     }
+
+    for (int i = state.currentRow * 5; i < (state.currentRow * 5) + 5; i++) {
+      if (state.tilesEntered[i].answerStage == AnswerStage.notAnswered) {
+        state.tilesEntered[i].answerStage = AnswerStage.incorrect;
+        final results = keysMap.entries
+            .where((element) => element.key == state.tilesEntered[i].letter);
+        if (results.single.value == AnswerStage.notAnswered) {
+          keysMap.update(
+            state.tilesEntered[i].letter,
+            (value) => AnswerStage.incorrect,
+          );
+        }
+      }
+    }
     state = state.copyWith(currentRow: state.currentRow + 1);
   }
 }
