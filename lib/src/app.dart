@@ -22,6 +22,7 @@ class App extends StatelessWidget {
         textTheme: const TextTheme().copyWith(
           bodyMedium: const TextStyle(
             fontWeight: FontWeight.bold,
+            color: Colors.black,
           ),
         ),
       ),

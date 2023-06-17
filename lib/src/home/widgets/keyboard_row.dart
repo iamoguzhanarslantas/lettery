@@ -26,6 +26,7 @@ class KeyboardRow extends ConsumerWidget {
           index++;
           if (index >= min && index <= max) {
             Color color = Theme.of(context).primaryColorLight;
+            Color keyColor = Colors.white;
             if (homeProviderController.tilesEntered.isNotEmpty) {
               if (e.value == AnswerStage.correct) {
                 color = AppColors.correctGreen;
@@ -33,7 +34,13 @@ class KeyboardRow extends ConsumerWidget {
                 color = AppColors.containsYellow;
               } else if (e.value == AnswerStage.incorrect) {
                 color = Theme.of(context).primaryColorDark;
+              } else {
+                keyColor = Theme.of(context).textTheme.bodyMedium?.color ??
+                    Colors.black;
               }
+            } else {
+              keyColor =
+                  Theme.of(context).textTheme.bodyMedium?.color ?? Colors.black;
             }
             return Padding(
               padding: EdgeInsets.all(size.width / 100),
@@ -53,7 +60,12 @@ class KeyboardRow extends ConsumerWidget {
                         );
                       },
                       child: Center(
-                        child: Text(e.key),
+                        child: Text(
+                          e.key,
+                          style: const TextStyle().copyWith(
+                            color: keyColor,
+                          ),
+                        ),
                       ),
                     ),
                   ),
