@@ -60,12 +60,14 @@ class KeyboardRow extends ConsumerWidget {
                         );
                       },
                       child: Center(
-                        child: Text(
-                          e.key,
-                          style: const TextStyle().copyWith(
-                            color: keyColor,
-                          ),
-                        ),
+                        child: e.key == 'BACK'
+                            ? const Icon(Icons.backspace_outlined)
+                            : Text(
+                                e.key,
+                                style: const TextStyle().copyWith(
+                                  color: keyColor,
+                                ),
+                              ),
                       ),
                     ),
                   ),

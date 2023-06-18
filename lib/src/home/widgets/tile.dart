@@ -50,6 +50,7 @@ class _TileState extends ConsumerState<Tile> {
       } else {
         fontColor =
             Theme.of(context).textTheme.bodyMedium?.color ?? Colors.black;
+        _backgroundColor = Colors.transparent;
       }
       return Container(
         decoration: BoxDecoration(
