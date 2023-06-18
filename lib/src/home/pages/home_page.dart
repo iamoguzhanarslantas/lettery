@@ -1,6 +1,7 @@
 import 'dart:math' show Random;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lettery/src/common/common.dart' show themeControllerProvider;
 import 'package:lettery/src/config/config.dart' show Config;
 import 'package:lettery/src/home/home.dart'
     show Grid, KeyboardRow, homeControllerProvider, words;
@@ -30,11 +31,21 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final themeProviderNotifierController =
+        ref.read(themeControllerProvider.notifier);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           Config.appBarTitle,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              themeProviderNotifierController.changeTheme();
+            },
+            icon: const Icon(Icons.settings),
+          ),
+        ],
       ),
       body: const Column(
         children: [

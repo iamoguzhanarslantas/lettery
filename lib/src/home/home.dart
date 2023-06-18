@@ -1,12 +1,12 @@
 export 'constants/answer_stage.dart';
 export 'constants/app_colors.dart';
 export 'constants/words.dart';
-export 'controllers/home_controller_state.dart';
-export 'controllers/home_controller_state_notifier.dart';
 export 'data/keys_map.dart';
 export 'models/tile_model.dart';
 export 'pages/home_page.dart';
 export 'provider.dart';
+export 'providers/home_controller_state.dart';
+export 'providers/home_controller_state_notifier.dart';
 export 'widgets/grid.dart';
 export 'widgets/keyboard_row.dart';
 export 'widgets/tile.dart';
