@@ -133,7 +133,7 @@ class __$$_HomeControllerStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomeControllerState implements _HomeControllerState {
-  const _$_HomeControllerState(
+  _$_HomeControllerState(
       {required this.correctWord,
       required this.currentTile,
       required this.currentRow,
@@ -181,7 +181,7 @@ class _$_HomeControllerState implements _HomeControllerState {
 }
 
 abstract class _HomeControllerState implements HomeControllerState {
-  const factory _HomeControllerState(
+  factory _HomeControllerState(
       {required final String correctWord,
       required final int currentTile,
       required final int currentRow,

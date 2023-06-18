@@ -11,4 +11,11 @@ class HomeControllerState with _$HomeControllerState {
     required int currentRow,
     required List<TileModel> tilesEntered,
   }) = _HomeControllerState;
+
+  factory HomeControllerState.init() => HomeControllerState(
+        correctWord: '',
+        currentTile: 0,
+        currentRow: 0,
+        tilesEntered: [],
+      );
 }

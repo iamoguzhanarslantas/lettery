@@ -4,13 +4,7 @@ import 'package:lettery/src/home/home.dart'
     show AnswerStage, HomeControllerState, TileModel, keysMap;
 
 class HomeControllerStateNotifier extends StateNotifier<HomeControllerState> {
-  HomeControllerStateNotifier()
-      : super(HomeControllerState(
-          correctWord: '',
-          currentTile: 0,
-          currentRow: 0,
-          tilesEntered: [],
-        ));
+  HomeControllerStateNotifier() : super(HomeControllerState.init());
 
   setCorrectWord({required String word}) {
     state = state.copyWith(correctWord: word);

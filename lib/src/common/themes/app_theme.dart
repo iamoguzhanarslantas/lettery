@@ -6,6 +6,9 @@ class AppTheme {
     primaryColorLight: AppColors.lightThemeLightShade,
     primaryColorDark: AppColors.lightThemeDarkShade,
     appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
       elevation: 0,
       centerTitle: true,
       backgroundColor: Colors.white,
@@ -30,6 +33,9 @@ class AppTheme {
     primaryColorLight: AppColors.darkThemeLightShade,
     primaryColorDark: AppColors.darkThemeDarkShade,
     appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(
+        color: Colors.white,
+      ),
       elevation: 0,
       centerTitle: true,
       backgroundColor: Colors.black,
