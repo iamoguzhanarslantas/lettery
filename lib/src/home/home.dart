@@ -4,6 +4,7 @@ export 'constants/words.dart';
 export 'data/keys_map.dart';
 export 'models/tile_model.dart';
 export 'pages/home_page.dart';
+export 'pages/settings_page.dart';
 export 'provider.dart';
 export 'providers/home_controller_state.dart';
 export 'providers/home_controller_state_notifier.dart';
