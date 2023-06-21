@@ -1,10 +1,10 @@
 import 'dart:math' show Random;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lettery/src/common/common.dart' show themeControllerProvider;
+import 'package:go_router/go_router.dart';
 import 'package:lettery/src/config/config.dart' show Config;
 import 'package:lettery/src/home/home.dart'
-    show Grid, KeyboardRow, homeControllerProvider, words;
+    show Grid, KeyboardRow, SettingsPage, homeControllerProvider, words;
 
 class HomePage extends ConsumerStatefulWidget {
   static const routeName = '/home';
@@ -31,8 +31,6 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final themeProviderNotifierController =
-        ref.read(themeControllerProvider.notifier);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -41,7 +39,7 @@ class _HomePageState extends ConsumerState<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
-              themeProviderNotifierController.changeTheme();
+              context.go(SettingsPage.routeName);
             },
             icon: const Icon(Icons.settings),
           ),
