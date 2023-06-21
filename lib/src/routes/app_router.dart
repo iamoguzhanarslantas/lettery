@@ -2,7 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lettery/src/home/home.dart' show HomePage, SettingsPage;
 
 final GoRouter router = GoRouter(
-  initialLocation: SettingsPage.routeName,
+  initialLocation: HomePage.routeName,
   routes: <RouteBase>[
     GoRoute(
       path: HomePage.routeName,
